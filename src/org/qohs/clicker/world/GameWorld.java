@@ -35,8 +35,12 @@ public class GameWorld {
 	public AutoClicker autoClicker;
 	public static ArrayList<UpdateRenderObj> updateObjs = new ArrayList<UpdateRenderObj>();
 	public static ArrayList<UpdateRenderObj> renderObjs = new ArrayList<UpdateRenderObj>();
-	public static int GAMEWIDTH = 480;
-	public static int GAMEHEIGHT = 800;
+	//Sam, it might be a good idea to set the widths perhaps in the desktop launcher
+	//and have it as a static there???
+	//btw if you write in DesktopLauncher.java "config.resizable = false" then you know
+	//DO NOT INSTANTIATE THIS CLASS WHEN YOU ARE NOT IN RENDER THREAD (MOST LIKE NOT A PROBLEM)
+	public static int GAMEWIDTH = Gdx.graphics.getWidth();
+	public static int GAMEHEIGHT = Gdx.graphics.getHeight();
 	//public Score score
 	
 	public GameWorld() {
