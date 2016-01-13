@@ -46,7 +46,7 @@ public class Score implements UpdateRenderObj {
 		String item = Long.toString(getScore());
 		glyphLayout.setText(AssetLoader.score_font, item);
 		float w = glyphLayout.width;
-		AssetLoader.score_font.draw(batcher, glyphLayout, (GameWorld.GAMEWIDTH - w)/2, 50);
+		AssetLoader.score_font.draw(batcher, glyphLayout, (GameWorld.GAMEWIDTH - w)/2, 25);
 		batcher.end();
 	}
 

@@ -95,16 +95,16 @@ public class Donut implements UpdateRenderObj {
 		if (animateClick) {
 			
 			//System.out.println("ANIMATING");
-			batcher.draw(typeTexture, 10, 110, 460, 460);
+			batcher.draw(typeTexture, 40, 140, 400, 400);
 			if (toppingTexture != null) {
-				batcher.draw(toppingTexture, 10, 110, 460, 460);
+				batcher.draw(toppingTexture, 40, 140, 400, 400);
 			}
 		}
 		else {
 			
-			batcher.draw(typeTexture, 0, 100, 480, 480);
+			batcher.draw(typeTexture, 30, 130, 420, 420);
 			if (toppingTexture != null) {
-				batcher.draw(toppingTexture, 0, 100, 480, 480);
+				batcher.draw(toppingTexture, 30, 130, 420, 420);
 			}
 		}
 		

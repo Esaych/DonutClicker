@@ -18,11 +18,14 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  */
 
 public class AssetLoader {
-	public static Texture texture;
 	public static Texture icons;
 	public static Texture toppings_texture;
 	public static Texture type_texture;
 	public static BitmapFont score_font;
+	public static Texture shop;
+	public static Texture donuts;
+	
+	
 	public static TextureRegion topping_blacksprinkles, 
 	topping_bluesprinkles, 
 	topping_chocofrosting,
@@ -49,6 +52,7 @@ public class AssetLoader {
 	type_stuffedjam,
 	type_stuffedwhippcream;
 	public static TextureRegion icon_trophy, icon_ribbon, icon_settings;
+	public static TextureRegion awning, sign, table;
 	
 	public static Map<DonutTopping, Float> multiplierMap = new HashMap<DonutTopping, Float>(); 
 	public static Map<DonutType, Float> cpsMap = new HashMap<DonutType, Float>();
@@ -68,11 +72,43 @@ type_stuffedwhippcream = 3072, 1024, 1024, 1024
 	 */
 
 	public static void load() {
-		texture = new Texture(Gdx.files.internal("assets/texture.png"));
 		icons = new Texture(Gdx.files.internal("assets/eat.png"));
 		toppings_texture = new Texture(Gdx.files.internal("assets/donut_topping.png"));
 		type_texture = new Texture(Gdx.files.internal("assets/donut_type.png"));
 		score_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52.fnt"), true);
+		donuts = new Texture(Gdx.files.internal("assets/donutshoppe/donits.png"));
+		shop = new Texture(Gdx.files.internal("assets/donutshoppe/shoppe.png"));
+		
+		awning = new TextureRegion(shop, 0, 0, 2000, 2000);
+		awning.flip(false, true);
+		sign = new TextureRegion(shop, 2000, 0, 2000, 2000);
+		sign.flip(false, true);
+		table = new TextureRegion(shop, 0, 2000, 2000, 1500);
+		table.flip(false, true);
+		
+//		cfrost = 2084 2084 1840 1764
+//				donit = 0 0 2084 2084
+//				fried = 2084 0 2084 2084
+//				frosting = 0 4168 1840 1764
+//				glazed = 4168 0 2084 2084
+//				jelly = 0 2084 2084 2084
+//				pfrost = 0 5932 1840 1764
+//				sprankblue = 3924 2084 1709 1616
+//				sprankchoc = 6252 0 1709 1616
+//				sprankrainbow = 3924 3700 1709 1616
+//				sprankred = 1840 5612 1709 1616
+//				sprankyellow = 5633 2084 1709 1616
+//				wfrost = 2084 3848 1840 1764
+
+		type_blueberry = new TextureRegion(type_texture, 0, 0, 1024, 1024);
+		type_cruller = new TextureRegion(type_texture, 1024, 0, 1024, 1024);
+			type_fried = new TextureRegion(donuts, 2084, 0, 2084, 2084);
+			type_glazed = new TextureRegion(donuts, 4168, 0, 2084, 2084);
+			type_plain = new TextureRegion(donuts, 0, 0, 2084, 2084);
+		type_stuffedcream = new TextureRegion(type_texture, 2048, 1024, 1024, 1024);
+			type_stuffedjam = new TextureRegion(donuts, 0, 2084, 2084, 2084);
+		type_stuffedwhippcream = new TextureRegion(type_texture, 3072, 1024, 1024, 1024);
+
 
 		topping_blacksprinkles = new TextureRegion(toppings_texture, 0, 0, 1024, 1024);
 		topping_bluesprinkles = new TextureRegion(toppings_texture, 1024, 0, 1024, 1024);
@@ -91,15 +127,6 @@ type_stuffedwhippcream = 3072, 1024, 1024, 1024
 		topping_whitefrosting = new TextureRegion(toppings_texture, 4096, 1024, 1024, 1024);
 		topping_whitesprinkles = new TextureRegion(toppings_texture, 5120, 1024, 1024, 1024);
 		topping_yellowsprinkles = new TextureRegion(toppings_texture, 4096, 2048, 1024, 1024);
-
-		type_blueberry = new TextureRegion(type_texture, 0, 0, 1024, 1024);
-		type_cruller = new TextureRegion(type_texture, 1024, 0, 1024, 1024);
-		type_fried = new TextureRegion(type_texture, 0, 1024, 1024, 1024);
-		type_glazed = new TextureRegion(type_texture, 1024, 1024, 1024, 1024);
-		type_plain = new TextureRegion(type_texture, 2048, 0, 1024, 1024);
-		type_stuffedcream = new TextureRegion(type_texture, 2048, 1024, 1024, 1024);
-		type_stuffedjam = new TextureRegion(type_texture, 3072, 0, 1024, 1024);
-		type_stuffedwhippcream = new TextureRegion(type_texture, 3072, 1024, 1024, 1024);
 		
 		icon_trophy = new TextureRegion(icons, 779, 77, 563, 653);
 		icon_ribbon = new TextureRegion(icons, 375, 720, 542, 752);
