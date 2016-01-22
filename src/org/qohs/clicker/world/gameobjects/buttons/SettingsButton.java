@@ -1,12 +1,13 @@
 package org.qohs.clicker.world.gameobjects.buttons;
 
+import org.qohs.clicker.io.AssetLoader;
 import org.qohs.clicker.world.GameWorld;
 import org.qohs.clicker.world.gameobjects.Button;
 
 public class SettingsButton extends Button {
 
 	public SettingsButton() {
-		super(GameWorld.GAMEWIDTH * 5/6, 0, GameWorld.GAMEWIDTH*1/6, GameWorld.GAMEHEIGHT*1/10, null, null);
+		super(GameWorld.GAMEWIDTH - (GameWorld.GAMEWIDTH/10+5), 5, GameWorld.GAMEWIDTH*1/10, GameWorld.GAMEHEIGHT*1/15, AssetLoader.icon_settings, AssetLoader.icon_settings);
 		// TODO Auto-generated constructor stub
 	}
 

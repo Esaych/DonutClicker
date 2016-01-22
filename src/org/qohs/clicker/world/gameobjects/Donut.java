@@ -11,40 +11,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class Donut implements UpdateRenderObj {
 
-/*	public enum DonutType {
-		PLAIN,
-		DEEP_FRIED,
-		BLUEBERRY,
-		JELLY,
-		CREAM,
-		CRULLER,
-		BOSTON_CREME,
-		SOUR_CREAM
-	}
-	
-	public enum DonutTopping {
-		NONE,
-		RED_SPRINKLES,
-		BLUE_SPRINKLES,
-		YELLOW_SPRINKLES,
-		WHITE_SPRINKLES,
-		BLACK_SPRINKLES,
-		GLAZED,
-		
-		//frostings
-		CHOCOLATE,
-		VANILLA,
-		STRAWBERRY,
-		
-		POWDER,
-		SUGAR_COATED,
-		CINNAMON
-	}
-	*/
 	private DonutType type;
 	private DonutTopping topping;
 	private boolean animateClick;
-	private double size; //WHAT'S THIS FOR?
 	
 	private TextureRegion typeTexture;
 	private TextureRegion toppingTexture;
@@ -74,6 +43,7 @@ public class Donut implements UpdateRenderObj {
 	
 	public void setType(DonutType newType) {
 		type = newType;
+		typeTexture = DonutType.getTexture(type);
 	}
 	
 	public DonutTopping getTopping() {
@@ -82,33 +52,62 @@ public class Donut implements UpdateRenderObj {
 	
 	public void setTopping(DonutTopping newTopping) {
 		topping = newTopping;
+		toppingTexture = DonutTopping.getTexture(topping);
 	}
 	
 	public void render(SpriteBatch batcher, ShapeRenderer renderer) {
-//		renderer.begin(ShapeType.Filled);
-//		renderer.circle(240, 400, 200);
-//		renderer.setColor(Color.CYAN);
-//		renderer.circle(240, 400, 50);
-//		renderer.end();
 		
 		batcher.begin();
 		if (animateClick) {
 			
 			//System.out.println("ANIMATING");
-			batcher.draw(typeTexture, 40, 140, 400, 400);
+			
+			batcher.draw(typeTexture, 
+					GameWorld.GAMEWIDTH/2-clickproportx(typeTexture)/2, 
+					340-clickproporty(typeTexture)/2, 
+					clickproportx(typeTexture), 
+					clickproporty(typeTexture));
 			if (toppingTexture != null) {
-				batcher.draw(toppingTexture, 40, 140, 400, 400);
+				batcher.draw(toppingTexture, 
+						GameWorld.GAMEWIDTH/2-clickproportx(toppingTexture)/2, 
+						340-clickproporty(toppingTexture)/2, 
+						clickproportx(toppingTexture), 
+						clickproporty(toppingTexture));
 			}
 		}
 		else {
 			
-			batcher.draw(typeTexture, 30, 130, 420, 420);
+			batcher.draw(typeTexture, 
+					GameWorld.GAMEWIDTH/2-proportx(typeTexture)/2, //ensures a centered image
+					340-proporty(typeTexture)/2, 
+					proportx(typeTexture), 
+					proporty(typeTexture));
 			if (toppingTexture != null) {
-				batcher.draw(toppingTexture, 30, 130, 420, 420);
+				batcher.draw(toppingTexture, 
+						GameWorld.GAMEWIDTH/2-proportx(toppingTexture)/2, //ensures a centered image
+						340-proporty(toppingTexture)/2, 
+						proportx(toppingTexture), 
+						proporty(toppingTexture));
 			}
 		}
 		
 		batcher.end();
+	}
+	
+	public int proportx(TextureRegion texture) { //since not all textures are the same size, we have to bring proportions by a scale factor.
+		return (int) (texture.getRegionWidth()*.18f);
+	}
+
+	public int proporty(TextureRegion texture) { //since not all textures are the same size, we have to bring proportions by a scale factor.
+		return (int) (texture.getRegionHeight()*.18f);
+	}
+	
+	public int clickproportx(TextureRegion texture) {
+		return (int) (texture.getRegionWidth()*.17f);
+	}
+	
+	public int clickproporty(TextureRegion texture) {
+		return (int) (texture.getRegionHeight()*.17f);
 	}
 
 	public void update(float delta) { //calling of this method disabled as per constructor

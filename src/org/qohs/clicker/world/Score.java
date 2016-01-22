@@ -3,6 +3,7 @@ package org.qohs.clicker.world;
 import org.qohs.clicker.io.AssetLoader;
 import org.qohs.clicker.util.UpdateRenderObj;
 import org.qohs.clicker.world.gameobjects.Donut;
+import org.qohs.clicker.world.gameobjects.donutaspects.DonutTopping;
 
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -33,7 +34,7 @@ public class Score implements UpdateRenderObj {
 	}
 	
 	public static void addClicks(int addition) {
-		addScore((int)(AssetLoader.multiplierMap.get(donut.getTopping().toString()) * addition));
+		addScore((int)(DonutTopping.getMultiplier(donut.getTopping()) * addition));
 	}
 	
 	public static long getScore() {

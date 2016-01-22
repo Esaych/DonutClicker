@@ -74,10 +74,8 @@ public class GameWorld {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		batcher.begin();
-//		batcher.draw(AssetLoader.sign, GAMEWIDTH/4, GAMEWIDTH/8, GAMEWIDTH/2, GAMEWIDTH/4);
 		batcher.draw(AssetLoader.awning, 0, GAMEWIDTH*-1/4, GAMEWIDTH, GAMEWIDTH);
 		batcher.draw(AssetLoader.table, 0, GAMEHEIGHT*4/5, GAMEWIDTH, GAMEWIDTH*3/4);
-//		batcher.draw(AssetLoader.icon_settings, GAMEWIDTH-80,0,80,80);
 		batcher.end();
 		
 		for (UpdateRenderObj objClass : renderObjs) {

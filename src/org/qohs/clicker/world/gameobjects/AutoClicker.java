@@ -20,14 +20,14 @@ public class AutoClicker implements UpdateRenderObj {
 	}
 	
 	public double getCPS() {
-		return DonutType.cps(donut.getType());
+		return DonutType.getClicksPerSec(donut.getType());
 	}
 	
 	public void update(float delta){
 		double clicks = delta * getCPS() + clickRemainder;
 		int actualClicks = (int) clicks;
 		clickRemainder = (float) clicks - actualClicks;
-		Score.addScore(actualClicks, DonutTopping.multiplier(donut.getTopping())-1); //multiplier for none = 1, so autoclicker should be 1 less (0 cps)
+		Score.addScore(actualClicks, DonutTopping.getMultiplier(donut.getTopping())-1); //multiplier for none = 1, so autoclicker should be 1 less (0 cps)
 	}
 	
 	public void render(SpriteBatch batcher, ShapeRenderer renderer) { //method disabled as per constructor
