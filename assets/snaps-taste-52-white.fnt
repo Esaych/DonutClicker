@@ -1,8 +1,8 @@
 info face="Snaps Taste" size=52 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
-common lineHeight=52 base=42 scaleW=256 scaleH=256 pages=3 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
-page id=0 file="snaps-taste-52_0.tga"
-page id=1 file="snaps-taste-52_1.tga"
-page id=2 file="snaps-taste-52_2.tga"
+common lineHeight=52 base=42 scaleW=256 scaleH=256 pages=3 packed=0 alphaChnl=0 redChnl=4 greenChnl=4 blueChnl=4
+page id=0 file="snaps-taste-52-white_0.png"
+page id=1 file="snaps-taste-52-white_1.png"
+page id=2 file="snaps-taste-52-white_2.png"
 chars count=193
 char id=0    x=249   y=10    width=0     height=1     xoffset=0     yoffset=51    xadvance=0     page=0  chnl=15
 char id=29   x=249   y=12    width=0     height=1     xoffset=0     yoffset=51    xadvance=0     page=0  chnl=15

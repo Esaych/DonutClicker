@@ -24,6 +24,7 @@ public class AssetLoader {
 	
 	//Fonts
 	public static BitmapFont score_font;
+	public static BitmapFont score_shadow_font;
 	
 	//ICON REGIONS
 	public static TextureRegion icon_trophy, icon_ribbon, icon_settings;
@@ -40,7 +41,8 @@ public class AssetLoader {
 		shop = new Texture(Gdx.files.internal("assets/donutshoppe/shoppe.png"));
 		
 		//LOADING FONTS
-		score_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52.fnt"), true);
+		score_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
+		score_shadow_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-black.fnt"), true);
 		
 		//SHOP SPRITE REGION ASSIGNMENT
 		awning = new TextureRegion(shop, 0, 0, 2000, 2000); awning.flip(false, true);
@@ -91,7 +93,7 @@ public class AssetLoader {
 					Integer.valueOf(coords[1]), 
 					Integer.valueOf(coords[2]),
 					Integer.valueOf(coords[3]), 
-					Integer.valueOf(coords[4]));
+					Integer.valueOf(coords[3]));
 			temp.flip(false, true);
 			DonutTopping.setTexture(DonutTopping.valueOf(coords[0]), temp);
 			for (String s: coords) {

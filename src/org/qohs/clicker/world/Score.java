@@ -5,6 +5,7 @@ import org.qohs.clicker.util.UpdateRenderObj;
 import org.qohs.clicker.world.gameobjects.Donut;
 import org.qohs.clicker.world.gameobjects.donutaspects.DonutTopping;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -47,6 +48,7 @@ public class Score implements UpdateRenderObj {
 		String item = Long.toString(getScore());
 		glyphLayout.setText(AssetLoader.score_font, item);
 		float w = glyphLayout.width;
+		AssetLoader.score_shadow_font.draw(batcher, glyphLayout, (GameWorld.GAMEWIDTH - w)/2+2, 27);
 		AssetLoader.score_font.draw(batcher, glyphLayout, (GameWorld.GAMEWIDTH - w)/2, 25);
 		batcher.end();
 	}
