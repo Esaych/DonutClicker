@@ -25,10 +25,10 @@ public class Clicker extends Game implements ApplicationListener {
     	AssetLoader.load();
     	gameScreen = new GameScreen();
     	menuScreen = new MenuScreen();
-    	setDonutScreen(ScreenType.GAME);
+    	setScreen(gameScreen);
     }
     
-    public void setDonutScreen(ScreenType screen) {
+    public void setScreen(ScreenType screen) {
     	switch (screen) {
     	case GAME: 
     		currentScreen = gameScreen;
