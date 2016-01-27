@@ -17,24 +17,29 @@ import com.badlogic.gdx.Screen;
 
 public class Clicker extends Game implements ApplicationListener {
     
-    private GameScreen gameScreen;
-    private MenuScreen menuScreen;
+    private static GameScreen gameScreen;
+    private static MenuScreen menuScreen;
     
-    private Screen currentScreen;
+    private static Screen currentScreen;
     
     public void create() {
         AssetLoader.load();
         gameScreen = new GameScreen();
         menuScreen = new MenuScreen();
-        setScreen(gameScreen);
+        setDonutScreen(ScreenType.GAME);
     }
     
-    public void setScreen(ScreenType screen) {
+    public void setDonutScreen(ScreenType screen) {
         switch (screen) {
-        case GAME: 
-            currentScreen = gameScreen;
-        case MENU:
-            currentScreen = menuScreen;
+	        case GAME: 
+	            currentScreen = gameScreen;
+	            break;
+	        case MENU:
+	            currentScreen = menuScreen;
+	            break;
+            default: 
+            	currentScreen = gameScreen;
+            	break;
         }
         setScreen(currentScreen);
     }
