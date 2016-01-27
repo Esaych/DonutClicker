@@ -13,38 +13,39 @@ import com.badlogic.gdx.Screen;
  * @author Sam Holmberg
  *
  */
+//I'm sorry, we touched it. @vigilante Derek Zhang
 
 public class Clicker extends Game implements ApplicationListener {
-	
-	private GameScreen gameScreen;
-	private MenuScreen menuScreen;
-	
-	private Screen currentScreen;
-	
+    
+    private GameScreen gameScreen;
+    private MenuScreen menuScreen;
+    
+    private Screen currentScreen;
+    
     public void create() {
-    	AssetLoader.load();
-    	gameScreen = new GameScreen();
-    	menuScreen = new MenuScreen();
-    	setScreen(gameScreen);
+        AssetLoader.load();
+        gameScreen = new GameScreen();
+        menuScreen = new MenuScreen();
+        setScreen(gameScreen);
     }
     
     public void setScreen(ScreenType screen) {
-    	switch (screen) {
-    	case GAME: 
-    		currentScreen = gameScreen;
-    	case MENU:
-    		currentScreen = menuScreen;
-    	}
+        switch (screen) {
+        case GAME: 
+            currentScreen = gameScreen;
+        case MENU:
+            currentScreen = menuScreen;
+        }
         setScreen(currentScreen);
     }
     
     @Override
     public Screen getScreen() {
-    	return currentScreen;
+        return currentScreen;
     }
-}
 
-enum ScreenType {
-	GAME,
-	MENU;
+    public enum ScreenType {
+        GAME,
+        MENU;
+    }
 }

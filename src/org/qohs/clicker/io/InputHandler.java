@@ -69,6 +69,7 @@ public class InputHandler implements InputProcessor {
 		return false;
 	}
 	
+	// TODO Make these dependent on which screen InputHandler is latched on to
 	/*
 	 * Called when click/tap screen
 	 * @see com.badlogic.gdx.InputProcessor#touchDown(int, int, int, int)

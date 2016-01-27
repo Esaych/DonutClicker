@@ -56,4 +56,4 @@ public class GameScreen implements Screen {
 		Gdx.app.log("GameScreen", "dispose() called - game over");       
 	}
 
-}//DEREK WAS HERE HEHEHEHE TEEHEEHEH EHI ESAYCHE AWOWFOJWEI
+}

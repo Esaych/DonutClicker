@@ -25,9 +25,10 @@ public class MenuScreen implements Screen {
 		
 	}
 
+    // TODO Change the place holder which shows that shop button works
 	public void render(float arg0) {
-		// TODO Auto-generated method stub
-		
+		Gdx.gl.glClearColor(1, 1, 1, 1);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 	}
 
 	public void resize(int arg0, int arg1) {
