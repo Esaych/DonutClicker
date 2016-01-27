@@ -27,7 +27,7 @@ public class AssetLoader {
 	public static BitmapFont score_shadow_font;
 	
 	//ICON REGIONS
-	public static TextureRegion icon_trophy, icon_ribbon, icon_settings;
+	public static TextureRegion icon_trophy, icon_ribbon, icon_settings, icon_menu_toggle;
 	
 	//INTERFACE REGIONS
 	public static TextureRegion awning, sign, table;
@@ -48,6 +48,11 @@ public class AssetLoader {
 		awning = new TextureRegion(shop, 0, 0, 2000, 2000); awning.flip(false, true);
 		sign = new TextureRegion(shop, 2000, 0, 2000, 2000); sign.flip(false, true);
 		table = new TextureRegion(shop, 0, 2000, 2000, 1500); table.flip(false, true);
+		
+		icon_trophy = new TextureRegion(icons, 779, 77, 563, 653);icon_trophy.flip(false, true);
+		icon_ribbon = new TextureRegion(icons, 375, 720, 542, 752);icon_ribbon.flip(false, true);
+		icon_settings = new TextureRegion(icons, 494, 1178, 558, 538);icon_settings.flip(true, true);
+		icon_menu_toggle = new TextureRegion(icons, 800, 890, 530, 205);
 		
 		//IMPORT TEXTURE MAP OF DONUT TYPES
 		FileHandle file = Gdx.files.internal("assets/donutshoppe/types.txt");
@@ -111,9 +116,5 @@ public class AssetLoader {
 			String[] pair = str.split("=");
 			DonutTopping.setMultiplier(DonutTopping.valueOf(pair[0]), Float.valueOf(pair[1]));
 		}
-		
-		icon_trophy = new TextureRegion(icons, 779, 77, 563, 653);
-		icon_ribbon = new TextureRegion(icons, 375, 720, 542, 752);
-		icon_settings = new TextureRegion(icons, 494, 1178, 558, 538);icon_settings.flip(true, true);
 	}
 }

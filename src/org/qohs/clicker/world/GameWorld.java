@@ -44,7 +44,7 @@ public class GameWorld {
 	//public Score score
 	
 	public GameWorld() {
-        donut = new Donut(DonutType.STUFFED_WHIPPED_CREAM, DonutTopping.RAINBOW_SPRINKLES);
+        donut = new Donut(DonutType.GLAZED, DonutTopping.RAINBOW_SPRINKLES);
         score = new Score(donut);
         autoClicker = new AutoClicker(donut);
 		shopButton = new ShopButton();

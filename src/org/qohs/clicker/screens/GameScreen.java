@@ -1,4 +1,4 @@
-package org.qohs.clicker;
+package org.qohs.clicker.screens;
 
 import org.qohs.clicker.io.InputHandler;
 import org.qohs.clicker.world.GameWorld;

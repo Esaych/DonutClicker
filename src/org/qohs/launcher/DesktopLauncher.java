@@ -35,6 +35,6 @@ public class DesktopLauncher {
 			config.height = 800;
 			Clicker clicker = new Clicker();
 			LwjglApplication app = new LwjglApplication(clicker, config);
-			app.getInput().setInputProcessor(new InputHandler(clicker.getGameScreen()));
+			app.getInput().setInputProcessor(new InputHandler(clicker.getScreen()));
 		}
 }
