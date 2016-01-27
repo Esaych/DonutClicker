@@ -38,8 +38,9 @@ public class Clicker extends Game implements ApplicationListener {
         setScreen(currentScreen);
     }
     
+    @Override
     public Screen getScreen() {
-    	return gameScreen;
+    	return currentScreen;
     }
 }
 
