@@ -22,9 +22,9 @@ public class Clicker extends Game implements ApplicationListener {
 	private Screen currentScreen;
 	
     public void create() {
+    	AssetLoader.load();
     	gameScreen = new GameScreen();
     	menuScreen = new MenuScreen();
-    	AssetLoader.load();
     	setScreen(gameScreen);
     }
     
