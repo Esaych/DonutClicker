@@ -34,7 +34,7 @@ public class ShopButton extends Button implements UpdateRenderObj {
 			}
 			catch (ClassCastException e) {
 				
-				System.err.println("Some-ting wong! (Could not set InputHandler\'s MenuScreen)");
+				System.err.println("SOMETHING WRONG! (Could not set InputHandler\'s MenuScreen)");
 			}
 		}
 	}

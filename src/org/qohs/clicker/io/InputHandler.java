@@ -11,7 +11,7 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 
 /**
- * Generic code to process inputs on the screen
+ * "Generic"(really NOT generic... teehee) code to process inputs on the screen
  * @author QO Game Development Club
  *
  */
@@ -20,6 +20,7 @@ public class InputHandler implements InputProcessor {
 	
 	private static GameScreen gameScreen;
 	private static MenuScreen menuScreen;
+	private static boolean isGameScreenShowing = false;
 	
 	public InputHandler(Screen screen) {
 		if (screen instanceof GameScreen)
@@ -30,10 +31,12 @@ public class InputHandler implements InputProcessor {
 	
 	public static void setGameScreen(GameScreen gs) {
 		gameScreen = gs;
+		isGameScreenShowing = true;
 	}
 	
 	public static void setMenuScreen(MenuScreen ms) {
 		menuScreen = ms;
+		isGameScreenShowing = false;
 	}
 
 	public boolean keyDown(int keycode) {
@@ -75,23 +78,35 @@ public class InputHandler implements InputProcessor {
 	 * @see com.badlogic.gdx.InputProcessor#touchDown(int, int, int, int)
 	 */
 	public boolean touchDown(int x, int y, int pointer, int button) {
-		if (gameScreen.getWorld().shopButton.collision(x, y))
-			gameScreen.getWorld().shopButton.animateClickDown();
-		else if (gameScreen.getWorld().settingsButton.collision(x, y))
-			gameScreen.getWorld().settingsButton.animateClickDown();
-		else //not a button click - must be donut click
-			gameScreen.getWorld().donut.animateClickDown();
+		if (isGameScreenShowing) {
+			if (gameScreen.getWorld().shopButton.collision(x, y))
+				gameScreen.getWorld().shopButton.animateClickDown();
+			else if (gameScreen.getWorld().settingsButton.collision(x, y))
+				gameScreen.getWorld().settingsButton.animateClickDown();
+			else //not a button click - must be donut click
+				gameScreen.getWorld().donut.animateClickDown();
+		}
+		else {
+
+			//do something
+		}
 		return true;
 	}
 
 	public boolean touchUp(int x, int y, int pointer, int button) {
-		if (gameScreen.getWorld().shopButton.collision(x, y))
-			gameScreen.getWorld().shopButton.animateClickUp();
-		else if (gameScreen.getWorld().settingsButton.collision(x, y))
-			gameScreen.getWorld().settingsButton.animateClickUp();
-		else
-			Score.addScore(1, DonutTopping.getMultiplier(gameScreen.getWorld().donut.getTopping()));
-			gameScreen.getWorld().donut.animateClickUp();
+		if (isGameScreenShowing) {
+			if (gameScreen.getWorld().shopButton.collision(x, y))
+				gameScreen.getWorld().shopButton.animateClickUp();
+			else if (gameScreen.getWorld().settingsButton.collision(x, y))
+				gameScreen.getWorld().settingsButton.animateClickUp();
+			else
+				Score.addScore(1, DonutTopping.getMultiplier(gameScreen.getWorld().donut.getTopping()));
+				gameScreen.getWorld().donut.animateClickUp();
+		}
+		else {
+
+			//do something
+		}
 		return true;
 	}
 
