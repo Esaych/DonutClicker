@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.GL20;
 public class MenuScreen implements Screen {
 	
 	public MenuScreen () {
-		InputHandler.setMenuScreen(this);
+
 	}
 
 	public void dispose() {
