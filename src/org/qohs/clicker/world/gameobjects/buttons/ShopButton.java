@@ -26,7 +26,7 @@ public class ShopButton extends Button implements UpdateRenderObj {
 		if (appListener instanceof Clicker) {
 			
 			Clicker clicker = (Clicker) appListener;
-			clicker.setScreen(Clicker.ScreenType.MENU);
+			clicker.setDonutScreen(Clicker.ScreenType.MENU);
 			//the input handler is accessible during runtime using: (InputHandler) Gdx.app.getInputProcessor()
 			try {
 				

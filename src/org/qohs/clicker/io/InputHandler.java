@@ -20,13 +20,17 @@ public class InputHandler implements InputProcessor {
 	
 	private static GameScreen gameScreen;
 	private static MenuScreen menuScreen;
-	private static boolean isGameScreenShowing = false;
+	private static boolean isGameScreenShowing = true;
 	
 	public InputHandler(Screen screen) {
-		if (screen instanceof GameScreen)
+		if (screen instanceof GameScreen) {
 			gameScreen = (GameScreen) screen;
-		if (screen instanceof MenuScreen)
+			isGameScreenShowing = true;
+		}
+		if (screen instanceof MenuScreen) {
 			menuScreen = (MenuScreen) screen;
+			isGameScreenShowing = false;
+		}
 	}
 	
 	public static void setGameScreen(GameScreen gs) {
