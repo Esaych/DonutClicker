@@ -1,12 +1,12 @@
-package org.qohs.clicker.world.gameobjects.buttons;
+package org.qohs.clicker.screens.game.gameobjects.buttons;
 
 import org.qohs.clicker.Clicker;
 import org.qohs.clicker.io.AssetLoader;
 import org.qohs.clicker.io.InputHandler;
 import org.qohs.clicker.screens.MenuScreen;
-import org.qohs.clicker.util.UpdateRenderObj;
-import org.qohs.clicker.world.GameWorld;
-import org.qohs.clicker.world.gameobjects.Button;
+import org.qohs.clicker.screens.game.GameWorld;
+import org.qohs.clicker.screens.util.Button;
+import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;

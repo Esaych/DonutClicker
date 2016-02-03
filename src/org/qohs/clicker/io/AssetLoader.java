@@ -1,7 +1,7 @@
 package org.qohs.clicker.io;
 
-import org.qohs.clicker.world.gameobjects.donutaspects.DonutTopping;
-import org.qohs.clicker.world.gameobjects.donutaspects.DonutType;
+import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
+import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutType;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;

@@ -1,15 +1,16 @@
-package org.qohs.clicker.world;
+package org.qohs.clicker.screens.game;
 
 import java.util.ArrayList;
 
 import org.qohs.clicker.io.AssetLoader;
-import org.qohs.clicker.util.UpdateRenderObj;
-import org.qohs.clicker.world.gameobjects.AutoClicker;
-import org.qohs.clicker.world.gameobjects.Donut;
-import org.qohs.clicker.world.gameobjects.buttons.SettingsButton;
-import org.qohs.clicker.world.gameobjects.buttons.ShopButton;
-import org.qohs.clicker.world.gameobjects.donutaspects.DonutTopping;
-import org.qohs.clicker.world.gameobjects.donutaspects.DonutType;
+import org.qohs.clicker.screens.game.gameobjects.AutoClicker;
+import org.qohs.clicker.screens.game.gameobjects.Donut;
+import org.qohs.clicker.screens.game.gameobjects.Score;
+import org.qohs.clicker.screens.game.gameobjects.buttons.SettingsButton;
+import org.qohs.clicker.screens.game.gameobjects.buttons.ShopButton;
+import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
+import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutType;
+import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;

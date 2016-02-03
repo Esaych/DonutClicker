@@ -1,4 +1,4 @@
-package org.qohs.clicker.util;
+package org.qohs.clicker.screens.util;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;

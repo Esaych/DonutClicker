@@ -1,7 +1,7 @@
 package org.qohs.clicker.screens;
 
 import org.qohs.clicker.io.InputHandler;
-import org.qohs.clicker.world.GameWorld;
+import org.qohs.clicker.screens.game.GameWorld;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;

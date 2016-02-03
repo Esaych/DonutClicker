@@ -1,4 +1,4 @@
-package org.qohs.clicker.world.gameobjects.donutaspects;
+package org.qohs.clicker.screens.game.gameobjects.donutaspects;
 
 import java.util.HashMap;
 import java.util.Map;

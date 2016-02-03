@@ -2,8 +2,8 @@ package org.qohs.clicker.io;
 
 import org.qohs.clicker.screens.GameScreen;
 import org.qohs.clicker.screens.MenuScreen;
-import org.qohs.clicker.world.Score;
-import org.qohs.clicker.world.gameobjects.donutaspects.DonutTopping;
+import org.qohs.clicker.screens.game.gameobjects.Score;
+import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;

@@ -1,7 +1,6 @@
-package org.qohs.clicker.world.gameobjects;
+package org.qohs.clicker.screens.util;
 
-import org.qohs.clicker.util.UpdateRenderObj;
-import org.qohs.clicker.world.GameWorld;
+import org.qohs.clicker.screens.game.GameWorld;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

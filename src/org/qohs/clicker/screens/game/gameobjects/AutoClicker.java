@@ -1,10 +1,9 @@
-package org.qohs.clicker.world.gameobjects;
+package org.qohs.clicker.screens.game.gameobjects;
 
-import org.qohs.clicker.util.UpdateRenderObj;
-import org.qohs.clicker.world.GameWorld;
-import org.qohs.clicker.world.Score;
-import org.qohs.clicker.world.gameobjects.donutaspects.DonutTopping;
-import org.qohs.clicker.world.gameobjects.donutaspects.DonutType;
+import org.qohs.clicker.screens.game.GameWorld;
+import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
+import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutType;
+import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;

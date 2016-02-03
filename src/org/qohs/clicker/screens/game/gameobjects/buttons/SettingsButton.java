@@ -1,8 +1,8 @@
-package org.qohs.clicker.world.gameobjects.buttons;
+package org.qohs.clicker.screens.game.gameobjects.buttons;
 
 import org.qohs.clicker.io.AssetLoader;
-import org.qohs.clicker.world.GameWorld;
-import org.qohs.clicker.world.gameobjects.Button;
+import org.qohs.clicker.screens.game.GameWorld;
+import org.qohs.clicker.screens.util.Button;
 
 public class SettingsButton extends Button {
 

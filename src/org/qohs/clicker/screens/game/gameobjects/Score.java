@@ -1,9 +1,9 @@
-package org.qohs.clicker.world;
+package org.qohs.clicker.screens.game.gameobjects;
 
 import org.qohs.clicker.io.AssetLoader;
-import org.qohs.clicker.util.UpdateRenderObj;
-import org.qohs.clicker.world.gameobjects.Donut;
-import org.qohs.clicker.world.gameobjects.donutaspects.DonutTopping;
+import org.qohs.clicker.screens.game.GameWorld;
+import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
+import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
