@@ -10,12 +10,11 @@ import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputProcessor;
 
 public class ShopButton extends Button implements UpdateRenderObj {
 
 	public ShopButton() {
-		super(0, GameWorld.GAMEHEIGHT*4/5, GameWorld.GAMEWIDTH, GameWorld.GAMEHEIGHT*2/5, AssetLoader.table, AssetLoader.table_clicked);
+		super(0, GameWorld.GAMEHEIGHT*4/5, GameWorld.GAMEWIDTH, GameWorld.GAMEWIDTH*3/4, AssetLoader.table, AssetLoader.table_clicked);
 		System.out.println("SHOP BUTTON CREATED");
 	}
 

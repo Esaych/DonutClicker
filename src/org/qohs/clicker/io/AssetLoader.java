@@ -21,6 +21,7 @@ public class AssetLoader {
 	public static Texture toppings_texture;
 	public static Texture type_texture;
 	public static Texture shop;	
+	public static Texture wood;
 	
 	//Fonts
 	public static BitmapFont score_font;
@@ -30,7 +31,7 @@ public class AssetLoader {
 	public static TextureRegion icon_trophy, icon_ribbon, icon_settings, icon_menu_toggle;
 	
 	//INTERFACE REGIONS
-	public static TextureRegion awning, sign, table, table_clicked;
+	public static TextureRegion awning, sign, table, table_clicked, shopback;
 
 	public static void load() {
 		
@@ -39,6 +40,7 @@ public class AssetLoader {
 		toppings_texture = new Texture(Gdx.files.internal("assets/donutshoppe/toppings.png"));
 		icons = new Texture(Gdx.files.internal("assets/eat.png"));
 		shop = new Texture(Gdx.files.internal("assets/donutshoppe/shoppe.png"));
+		wood = new Texture(Gdx.files.internal("assets/donutshoppe/wood.png"));
 		
 		//LOADING FONTS
 		score_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
@@ -49,6 +51,7 @@ public class AssetLoader {
 		sign = new TextureRegion(shop, 2000, 0, 2000, 2000); sign.flip(false, true);
 		table = new TextureRegion(shop, 0, 2000, 2000, 1500); table.flip(false, true);
 		table_clicked = new TextureRegion(shop, 2000, 2000, 2000, 1500); table_clicked.flip(false, true);
+		shopback = new TextureRegion(wood, 0, 0, 2000, 4000); shopback.flip(false, true);
 		
 		icon_trophy = new TextureRegion(icons, 779, 77, 563, 653);icon_trophy.flip(false, true);
 		icon_ribbon = new TextureRegion(icons, 375, 720, 542, 752);icon_ribbon.flip(false, true);

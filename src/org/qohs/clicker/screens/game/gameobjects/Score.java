@@ -5,7 +5,6 @@ import org.qohs.clicker.screens.game.GameWorld;
 import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
 import org.qohs.clicker.screens.util.UpdateRenderObj;
 
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -15,7 +14,7 @@ public class Score implements UpdateRenderObj {
 	private static Donut donut;
 	
 	public Score(Donut donut) {
-		this.donut = donut;
+		Score.donut = donut;
 		GameWorld.registerUpdates(this, false, true);
 	}
 	

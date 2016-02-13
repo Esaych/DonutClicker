@@ -3,8 +3,6 @@ package org.qohs.clicker.screens.game.gameobjects.donutaspects;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.qohs.clicker.io.AssetLoader;
-
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public enum DonutType {
