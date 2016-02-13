@@ -53,12 +53,12 @@ public abstract class Button implements UpdateRenderObj {
 	public void animateClickDown() {
 		animateClick = true;
 		System.out.println("BUTTON DOWN");
-		onClick();
 	}
 	
 	public void animateClickUp() { 
 		animateClick = false;
 		System.out.println("BUTTON UP");
+		onClick();
 	}
 	
 	public boolean collision(int x2, int y2){

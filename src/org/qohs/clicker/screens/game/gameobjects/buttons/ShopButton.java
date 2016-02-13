@@ -15,7 +15,7 @@ import com.badlogic.gdx.InputProcessor;
 public class ShopButton extends Button implements UpdateRenderObj {
 
 	public ShopButton() {
-		super(0, GameWorld.GAMEHEIGHT*4/5, GameWorld.GAMEWIDTH, GameWorld.GAMEHEIGHT*1/5, AssetLoader.table, AssetLoader.table);
+		super(0, GameWorld.GAMEHEIGHT*4/5, GameWorld.GAMEWIDTH, GameWorld.GAMEHEIGHT*2/5, AssetLoader.table, AssetLoader.table_clicked);
 		System.out.println("SHOP BUTTON CREATED");
 	}
 

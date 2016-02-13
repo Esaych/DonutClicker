@@ -30,7 +30,7 @@ public class AssetLoader {
 	public static TextureRegion icon_trophy, icon_ribbon, icon_settings, icon_menu_toggle;
 	
 	//INTERFACE REGIONS
-	public static TextureRegion awning, sign, table;
+	public static TextureRegion awning, sign, table, table_clicked;
 
 	public static void load() {
 		
@@ -48,6 +48,7 @@ public class AssetLoader {
 		awning = new TextureRegion(shop, 0, 0, 2000, 2000); awning.flip(false, true);
 		sign = new TextureRegion(shop, 2000, 0, 2000, 2000); sign.flip(false, true);
 		table = new TextureRegion(shop, 0, 2000, 2000, 1500); table.flip(false, true);
+		table_clicked = new TextureRegion(shop, 2000, 2000, 2000, 1500); table_clicked.flip(false, true);
 		
 		icon_trophy = new TextureRegion(icons, 779, 77, 563, 653);icon_trophy.flip(false, true);
 		icon_ribbon = new TextureRegion(icons, 375, 720, 542, 752);icon_ribbon.flip(false, true);
