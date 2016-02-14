@@ -26,7 +26,13 @@ public class Score implements UpdateRenderObj {
 	}
 	
 	public static void addScore(int addition) {
+		
 		score += addition;
+		
+		if (addition != 0) {
+			
+			new PlusNumber(addition);
+		}
 	}
 	
 	public static void addScore(int clicks, double multiplier) {

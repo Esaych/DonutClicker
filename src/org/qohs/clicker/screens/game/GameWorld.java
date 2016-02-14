@@ -1,6 +1,8 @@
 package org.qohs.clicker.screens.game;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import org.qohs.clicker.io.AssetLoader;
 import org.qohs.clicker.screens.game.gameobjects.AutoClicker;
@@ -36,6 +38,9 @@ public class GameWorld {
 	public AutoClicker autoClicker;
 	public static ArrayList<UpdateRenderObj> updateObjs = new ArrayList<UpdateRenderObj>();
 	public static ArrayList<UpdateRenderObj> renderObjs = new ArrayList<UpdateRenderObj>();
+	public static Queue<UpdateRenderObj> addUpdateObjs = new LinkedList<UpdateRenderObj>();
+	public static Queue<UpdateRenderObj> addRenderObjs = new LinkedList<UpdateRenderObj>();
+	public static Queue<UpdateRenderObj> removeObjs = new LinkedList<UpdateRenderObj>();
 	//Sam, it might be a good idea to set the widths perhaps in the desktop launcher
 	//and have it as a static there???
 	//btw if you write in DesktopLauncher.java "config.resizable = false" then you know
@@ -66,7 +71,26 @@ public class GameWorld {
 		for (UpdateRenderObj objClass : updateObjs) {
 			objClass.update(delta);
 		}
-    }
+		
+		while (!removeObjs.isEmpty()) {
+			
+			UpdateRenderObj uRO = removeObjs.remove();
+			updateObjs.remove(uRO);
+			renderObjs.remove(uRO);
+		}
+		
+		while (!addUpdateObjs.isEmpty()) {
+			
+			UpdateRenderObj uRO = addUpdateObjs.remove();
+			updateObjs.add(uRO);
+		}
+		
+		while (!addRenderObjs.isEmpty()) {
+			
+			UpdateRenderObj uRO = addRenderObjs.remove();
+			renderObjs.add(uRO);
+		}
+     }
     
     public void render(float delta) {
 		// Sets a Color to Fill the Screen with (RGB = 112, 253, 230), Opacity of 1 (100%)
@@ -86,8 +110,13 @@ public class GameWorld {
     
     public static void registerUpdates(UpdateRenderObj objClass, boolean update, boolean render) {
     	if (update)
-    		updateObjs.add(objClass);
+    		addUpdateObjs.add(objClass);
     	if (render)
-    		renderObjs.add(objClass);
+    		addRenderObjs.add(objClass);
+    }
+    
+    public static void removeUpdates(UpdateRenderObj objClass) {
+
+    	removeObjs.add(objClass);
     }
 }
