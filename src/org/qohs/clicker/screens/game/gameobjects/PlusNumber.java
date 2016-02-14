@@ -20,14 +20,16 @@ public class PlusNumber implements UpdateRenderObj {
 	private final String plusString;
 	private float timePassed;
 	private int y;
-	private float alpha;
+	private float alphaWhite;
+	private float alphaBlack;
 	
 	public PlusNumber(int addition) {
 		
 		plusString = "+" + addition;
 		timePassed = 0;
 		y = GameWorld.GAMEHEIGHT/2;
-		alpha = 255;
+		alphaWhite = 1;
+		alphaBlack = 1;
 		GameWorld.registerUpdates(this, true, true);
 	}
 
@@ -35,14 +37,14 @@ public class PlusNumber implements UpdateRenderObj {
 
 		timePassed += delta;
 			
-		if (timePassed >= .1) {
 			
-			alpha = Math.max(alpha - 50, 0);
+			alphaWhite = Math.max(alphaWhite - .01f, 0);
+			alphaBlack = Math.max(alphaBlack - .02f, 0);
+			
 			timePassed = 0;
-		}
 		
 		y -= 6;
-		if (y <= 0) {
+		if (y <= 0 || alphaBlack == 0) {
 			
 			GameWorld.removeUpdates(this);
 		}
@@ -56,13 +58,13 @@ public class PlusNumber implements UpdateRenderObj {
 		float w = glyphLayout.width;
 		Color color;
 		color = AssetLoader.score_shadow_font.getColor();
-		AssetLoader.score_shadow_font.setColor(color.r, color.g, color.b, alpha);
+		AssetLoader.score_shadow_font.setColor(color.r, color.g, color.b, alphaBlack);
 		AssetLoader.score_shadow_font.draw(batcher, glyphLayout, (GameWorld.GAMEWIDTH - w)/2+2, y+2);
-		AssetLoader.score_shadow_font.setColor(color);
 		color = AssetLoader.score_font.getColor();
-		AssetLoader.score_font.setColor(color.r, color.g, color. b, alpha);
+		AssetLoader.score_font.setColor(color.r, color.g, color. b, alphaWhite);
 		AssetLoader.score_font.draw(batcher, glyphLayout, (GameWorld.GAMEWIDTH - w)/2, y);
-		AssetLoader.score_font.setColor(color);
 		batcher.end();
+		AssetLoader.score_shadow_font.setColor(AssetLoader.score_shadow_font.getColor());
+		AssetLoader.score_font.setColor(AssetLoader.score_font.getColor());
 	}
 }
