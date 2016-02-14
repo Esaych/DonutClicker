@@ -59,8 +59,7 @@ public class ColorRetainingBitmapFont extends BitmapFont {
 	public ColorRetainingBitmapFont(BitmapFontData data, Array<TextureRegion> pageRegions, boolean integer) {
 
 		super(data, pageRegions, integer);
-		color = new Color();
-		color.set(super.getColor());
+		color = new Color(super.getColor());
 	}
 	
 	@Override
