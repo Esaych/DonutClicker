@@ -38,9 +38,6 @@ public class GameWorld {
 	public AutoClicker autoClicker;
 	public static ArrayList<UpdateRenderObj> updateObjs = new ArrayList<UpdateRenderObj>();
 	public static ArrayList<UpdateRenderObj> renderObjs = new ArrayList<UpdateRenderObj>();
-	public static Queue<UpdateRenderObj> addUpdateObjs = new LinkedList<UpdateRenderObj>();
-	public static Queue<UpdateRenderObj> addRenderObjs = new LinkedList<UpdateRenderObj>();
-	public static Queue<UpdateRenderObj> removeObjs = new LinkedList<UpdateRenderObj>();
 	//Sam, it might be a good idea to set the widths perhaps in the desktop launcher
 	//and have it as a static there???
 	//btw if you write in DesktopLauncher.java "config.resizable = false" then you know
@@ -72,22 +69,22 @@ public class GameWorld {
 			objClass.update(delta);
 		}
 		
-		while (!removeObjs.isEmpty()) {
+		while (!RenderObjQueue.removeObjs.isEmpty()) {
 			
-			UpdateRenderObj uRO = removeObjs.remove();
+			UpdateRenderObj uRO = RenderObjQueue.removeObjs.remove();
 			updateObjs.remove(uRO);
 			renderObjs.remove(uRO);
 		}
 		
-		while (!addUpdateObjs.isEmpty()) {
+		while (!RenderObjQueue.addUpdateObjs.isEmpty()) {
 			
-			UpdateRenderObj uRO = addUpdateObjs.remove();
+			UpdateRenderObj uRO = RenderObjQueue.addUpdateObjs.remove();
 			updateObjs.add(uRO);
 		}
 		
-		while (!addRenderObjs.isEmpty()) {
+		while (!RenderObjQueue.addRenderObjs.isEmpty()) {
 			
-			UpdateRenderObj uRO = addRenderObjs.remove();
+			UpdateRenderObj uRO = RenderObjQueue.addRenderObjs.remove();
 			renderObjs.add(uRO);
 		}
      }
@@ -110,13 +107,8 @@ public class GameWorld {
     
     public static void registerUpdates(UpdateRenderObj objClass, boolean update, boolean render) {
     	if (update)
-    		addUpdateObjs.add(objClass);
+    		updateObjs.add(objClass);
     	if (render)
-    		addRenderObjs.add(objClass);
-    }
-    
-    public static void removeUpdates(UpdateRenderObj objClass) {
-
-    	removeObjs.add(objClass);
+    		renderObjs.add(objClass);
     }
 }
