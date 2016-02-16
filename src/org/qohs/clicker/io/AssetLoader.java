@@ -24,8 +24,10 @@ public class AssetLoader {
 	public static Texture shop;	
 	
 	//Fonts
-	public static ColorRetainingBitmapFont score_font;
-	public static ColorRetainingBitmapFont score_shadow_font;
+	public static BitmapFont score_font;
+	public static BitmapFont score_shadow_font;
+	public static ColorRetainingBitmapFont plus_number_font;
+	public static ColorRetainingBitmapFont plus_number_shadow_font;
 	
 	//ICON REGIONS
 	public static TextureRegion icon_trophy, icon_ribbon, icon_settings, icon_menu_toggle;
@@ -42,8 +44,12 @@ public class AssetLoader {
 		shop = new Texture(Gdx.files.internal("assets/donutshoppe/shoppe.png"));
 		
 		//LOADING FONTS
-		score_font = new ColorRetainingBitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
-		score_shadow_font = new ColorRetainingBitmapFont(Gdx.files.internal("assets/snaps-taste-52-black.fnt"), true);
+		score_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
+		score_shadow_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
+		plus_number_font = new ColorRetainingBitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
+		plus_number_font.getData().setScale(.65f);
+		plus_number_shadow_font = new ColorRetainingBitmapFont(Gdx.files.internal("assets/snaps-taste-52-black.fnt"), true);
+		plus_number_shadow_font.getData().setScale(.65f);
 		
 		//SHOP SPRITE REGION ASSIGNMENT
 		awning = new TextureRegion(shop, 0, 0, 2000, 2000); awning.flip(false, true);

@@ -35,8 +35,8 @@ public class PlusNumber implements UpdateRenderObj {
 		plusString = "+" + addition;
 		y = GameWorld.GAMEHEIGHT/2;
 		originalDistance = y;
-		white = new Color(AssetLoader.score_font.getColor());
-		black = new Color(AssetLoader.score_shadow_font.getColor());
+		white = new Color(AssetLoader.plus_number_font.getColor());
+		black = new Color(AssetLoader.plus_number_shadow_font.getColor());
 		fader = new Actor();
 		AlphaAction fadeAction = Actions.fadeOut(PRIMARY_FADE_TIME);
 		fadeAction.setColor(white);
@@ -49,24 +49,27 @@ public class PlusNumber implements UpdateRenderObj {
 
 	public void update(float delta) {
 
+		//math happens
 		y -= originalDistance * delta / PRIMARY_FADE_TIME;
+		//remove this object once it's off the screen, or barely visible
 		if (y <= 0 || white.a <= .3) {
 
 			RenderObjQueue.removeUpdates(this);
 		}
-
+		//fading
 		fader.act(delta);
 	}
 
 	public void render(SpriteBatch batcher, ShapeRenderer renderer) {
-			
+
 		batcher.begin();
-		AssetLoader.score_shadow_font.setColor(black);
-		AssetLoader.score_shadow_font.draw(batcher, plusString, (GameWorld.GAMEWIDTH )/2+2, y+2);
-		AssetLoader.score_font.setColor(white);
-		AssetLoader.score_font.draw(batcher, plusString, (GameWorld.GAMEWIDTH )/2, y);
+		AssetLoader.plus_number_shadow_font.setColor(black);
+		AssetLoader.plus_number_shadow_font.draw(batcher, plusString, (GameWorld.GAMEWIDTH )/2+2, y+2);
+		AssetLoader.plus_number_font.setColor(white);
+		AssetLoader.plus_number_font.draw(batcher, plusString, (GameWorld.GAMEWIDTH )/2, y);
 		batcher.end();
-		AssetLoader.score_shadow_font.setColor(AssetLoader.score_shadow_font.getOriginalColor());
-		AssetLoader.score_font.setColor(AssetLoader.score_font.getOriginalColor());
+		//reset color
+		AssetLoader.plus_number_shadow_font.setColor(AssetLoader.plus_number_shadow_font.getOriginalColor());
+		AssetLoader.plus_number_font.setColor(AssetLoader.plus_number_font.getOriginalColor());
 	}
 }
