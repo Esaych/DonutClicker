@@ -26,6 +26,7 @@ public class Score implements UpdateRenderObj {
 	}
 	
 	public static void addScore(int addition) {
+		
 		score += addition;
 	}
 	
@@ -34,8 +35,15 @@ public class Score implements UpdateRenderObj {
 		addScore((int)(multiplier * clicks));
 	}
 	
-	public static void addClicks(int addition) {
-		addScore((int)(DonutTopping.getMultiplier(donut.getTopping()) * addition));
+	public static void addUserClicks(int addition) {
+		
+		addition = 
+		(int)(DonutTopping.getMultiplier(donut.getTopping()) * addition);
+		addScore(addition);
+		if (addition != 0) {
+			
+			new PlusNumber(addition);
+		}
 	}
 	
 	public static long getScore() {

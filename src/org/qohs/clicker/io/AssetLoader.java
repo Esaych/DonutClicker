@@ -2,6 +2,7 @@ package org.qohs.clicker.io;
 
 import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
 import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutType;
+import org.qohs.clicker.screens.util.ColorRetainingBitmapFont;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -25,6 +26,8 @@ public class AssetLoader {
 	//Fonts
 	public static BitmapFont score_font;
 	public static BitmapFont score_shadow_font;
+	public static ColorRetainingBitmapFont plus_number_font;
+	public static ColorRetainingBitmapFont plus_number_shadow_font;
 	
 	//ICON REGIONS
 	public static TextureRegion icon_trophy, icon_ribbon, icon_settings, icon_menu_toggle;
@@ -43,6 +46,10 @@ public class AssetLoader {
 		//LOADING FONTS
 		score_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
 		score_shadow_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-black.fnt"), true);
+		plus_number_font = new ColorRetainingBitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
+		plus_number_font.getData().setScale(.65f);
+		plus_number_shadow_font = new ColorRetainingBitmapFont(Gdx.files.internal("assets/snaps-taste-52-black.fnt"), true);
+		plus_number_shadow_font.getData().setScale(.65f);
 		
 		//SHOP SPRITE REGION ASSIGNMENT
 		awning = new TextureRegion(shop, 0, 0, 2000, 2000); awning.flip(false, true);

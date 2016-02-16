@@ -1,6 +1,8 @@
 package org.qohs.clicker.screens.game;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import org.qohs.clicker.io.AssetLoader;
 import org.qohs.clicker.screens.game.gameobjects.AutoClicker;
@@ -66,7 +68,26 @@ public class GameWorld {
 		for (UpdateRenderObj objClass : updateObjs) {
 			objClass.update(delta);
 		}
-    }
+		
+		while (!RenderObjQueue.removeObjs.isEmpty()) {
+			
+			UpdateRenderObj uRO = RenderObjQueue.removeObjs.remove();
+			updateObjs.remove(uRO);
+			renderObjs.remove(uRO);
+		}
+		
+		while (!RenderObjQueue.addUpdateObjs.isEmpty()) {
+			
+			UpdateRenderObj uRO = RenderObjQueue.addUpdateObjs.remove();
+			updateObjs.add(uRO);
+		}
+		
+		while (!RenderObjQueue.addRenderObjs.isEmpty()) {
+			
+			UpdateRenderObj uRO = RenderObjQueue.addRenderObjs.remove();
+			renderObjs.add(uRO);
+		}
+     }
     
     public void render(float delta) {
 		// Sets a Color to Fill the Screen with (RGB = 112, 253, 230), Opacity of 1 (100%)

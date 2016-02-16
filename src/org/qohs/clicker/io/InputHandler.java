@@ -104,8 +104,9 @@ public class InputHandler implements InputProcessor {
 			else if (gameScreen.getWorld().settingsButton.collision(x, y))
 				gameScreen.getWorld().settingsButton.animateClickUp();
 			else
-				Score.addScore(1, DonutTopping.getMultiplier(gameScreen.getWorld().donut.getTopping()));
-				gameScreen.getWorld().donut.animateClickUp();
+				Score.addUserClicks(1);
+				//Score.addScore(1, DonutTopping.getMultiplier(gameScreen.getWorld().donut.getTopping()));
+			gameScreen.getWorld().donut.animateClickUp();
 		}
 		else {
 
