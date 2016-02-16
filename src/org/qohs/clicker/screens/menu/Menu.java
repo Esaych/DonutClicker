@@ -2,6 +2,8 @@ package org.qohs.clicker.screens.menu;
 
 import java.util.ArrayList;
 
+import org.qohs.clicker.io.AssetLoader;
+import org.qohs.clicker.screens.menu.buttons.ShopButton;
 import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.Gdx;
@@ -15,6 +17,9 @@ public class Menu {
 	private OrthographicCamera cam;
 	private ShapeRenderer renderer;
 	private SpriteBatch batcher;
+	
+	public ShopButton shopButton;
+	
 	public static ArrayList<UpdateRenderObj> updateObjs = new ArrayList<UpdateRenderObj>();
 	public static ArrayList<UpdateRenderObj> renderObjs = new ArrayList<UpdateRenderObj>();
 	public static int GAMEWIDTH = Gdx.graphics.getWidth();
@@ -29,6 +34,8 @@ public class Menu {
 		
 		renderer = new ShapeRenderer();
 		renderer.setProjectionMatrix(cam.combined);
+		
+		shopButton = new ShopButton(true);
 	}
 	
     public void update(float delta) {
@@ -42,6 +49,10 @@ public class Menu {
 		Gdx.gl.glClearColor(112/255.0f, 253/255.0f, 255/255.0f, 1f);
 		// Fills the screen with the selected color
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		
+		batcher.begin();
+		batcher.draw(AssetLoader.shopbackground, 0, 0, GAMEWIDTH, GAMEWIDTH*2); //sprite is 2000x4000 1x2 ratio
+		batcher.end();
 		
 		for (UpdateRenderObj objClass : renderObjs) {
 			objClass.render(batcher, renderer);

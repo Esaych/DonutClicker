@@ -1,13 +1,15 @@
 package org.qohs.clicker.screens;
 
-import com.badlogic.gdx.Gdx;
+import org.qohs.clicker.screens.menu.Menu;
+
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL20;
 
 public class MenuScreen implements Screen {
+
+	private Menu menu;
 	
 	public MenuScreen () {
-
+		menu = new Menu();
 	}
 
 	public void dispose() {
@@ -26,9 +28,9 @@ public class MenuScreen implements Screen {
 	}
 
     // TODO Change the place holder which shows that shop button works
-	public void render(float arg0) {
-		Gdx.gl.glClearColor(1, 1, 1, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+	public void render(float delta) {
+		menu.update(delta);
+		menu.render(delta);
 	}
 
 	public void resize(int arg0, int arg1) {
@@ -44,6 +46,10 @@ public class MenuScreen implements Screen {
 	public void show() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public Menu getMenu() {
+		return menu;
 	}
 
 }

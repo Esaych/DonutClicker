@@ -1,6 +1,9 @@
 package org.qohs.clicker.screens.util;
 
+import org.qohs.clicker.Clicker;
+import org.qohs.clicker.Clicker.ScreenType;
 import org.qohs.clicker.screens.game.GameWorld;
+import org.qohs.clicker.screens.menu.Menu;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -22,7 +25,10 @@ public abstract class Button implements UpdateRenderObj {
 		this.height = height;
 		this.texture = texture;
 		this.clickTexture = clickTexture;
-		GameWorld.registerUpdates(this, false, true);
+		if (Clicker.getClickerScreenType().equals(ScreenType.GAME))
+			GameWorld.registerUpdates(this, false, true);
+		else if (Clicker.getClickerScreenType().equals(ScreenType.MENU))
+			Menu.registerUpdates(this, false, true);
 	}
 	
 	public int getX(){

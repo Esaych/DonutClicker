@@ -1,5 +1,7 @@
 package org.qohs.clicker.io;
 
+import org.qohs.clicker.Clicker;
+import org.qohs.clicker.Clicker.ScreenType;
 import org.qohs.clicker.screens.GameScreen;
 import org.qohs.clicker.screens.MenuScreen;
 import org.qohs.clicker.screens.game.gameobjects.Score;
@@ -8,7 +10,6 @@ import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
 
 /**
  * "Generic"(really NOT generic... teehee) code to process inputs on the screen
@@ -17,31 +18,6 @@ import com.badlogic.gdx.Screen;
  */
 
 public class InputHandler implements InputProcessor {
-	
-	private static GameScreen gameScreen;
-	private static MenuScreen menuScreen;
-	private static boolean isGameScreenShowing = true;
-	
-	public InputHandler(Screen screen) {
-		if (screen instanceof GameScreen) {
-			gameScreen = (GameScreen) screen;
-			isGameScreenShowing = true;
-		}
-		if (screen instanceof MenuScreen) {
-			menuScreen = (MenuScreen) screen;
-			isGameScreenShowing = false;
-		}
-	}
-	
-	public static void setGameScreen(GameScreen gs) {
-		gameScreen = gs;
-		isGameScreenShowing = true;
-	}
-	
-	public static void setMenuScreen(MenuScreen ms) {
-		menuScreen = ms;
-		isGameScreenShowing = false;
-	}
 
 	public boolean keyDown(int keycode) {
 		if (keycode == Keys.BACK || keycode == Keys.MENU || keycode == Keys.ESCAPE) {
@@ -82,7 +58,8 @@ public class InputHandler implements InputProcessor {
 	 * @see com.badlogic.gdx.InputProcessor#touchDown(int, int, int, int)
 	 */
 	public boolean touchDown(int x, int y, int pointer, int button) {
-		if (isGameScreenShowing) {
+		if (Clicker.getClickerScreenType().equals(ScreenType.GAME)) {
+			GameScreen gameScreen = (GameScreen) Clicker.getClickerScreen();
 			if (gameScreen.getWorld().shopButton.collision(x, y))
 				gameScreen.getWorld().shopButton.animateClickDown();
 			else if (gameScreen.getWorld().settingsButton.collision(x, y))
@@ -91,14 +68,16 @@ public class InputHandler implements InputProcessor {
 				gameScreen.getWorld().donut.animateClickDown();
 		}
 		else {
-
-			//do something
+			MenuScreen menuScreen = (MenuScreen) Clicker.getClickerScreen();
+			if (menuScreen.getMenu().shopButton.collision(x, y))
+				menuScreen.getMenu().shopButton.animateClickDown();
 		}
 		return true;
 	}
 
 	public boolean touchUp(int x, int y, int pointer, int button) {
-		if (isGameScreenShowing) {
+		if (Clicker.getClickerScreenType().equals(ScreenType.GAME)) {
+			GameScreen gameScreen = (GameScreen) Clicker.getClickerScreen();
 			if (gameScreen.getWorld().shopButton.collision(x, y))
 				gameScreen.getWorld().shopButton.animateClickUp();
 			else if (gameScreen.getWorld().settingsButton.collision(x, y))
@@ -109,8 +88,9 @@ public class InputHandler implements InputProcessor {
 			gameScreen.getWorld().donut.animateClickUp();
 		}
 		else {
-
-			//do something
+			MenuScreen menuScreen = (MenuScreen) Clicker.getClickerScreen();
+			if (menuScreen.getMenu().shopButton.collision(x, y))
+				menuScreen.getMenu().shopButton.animateClickUp();
 		}
 		return true;
 	}

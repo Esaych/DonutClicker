@@ -1,4 +1,4 @@
-package org.qohs.clicker.screens.game.gameobjects.buttons;
+package org.qohs.clicker.screens.menu.buttons;
 
 import org.qohs.clicker.io.AssetLoader;
 import org.qohs.clicker.screens.game.GameWorld;

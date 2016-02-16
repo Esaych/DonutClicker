@@ -1,6 +1,5 @@
 package org.qohs.clicker.screens;
 
-import org.qohs.clicker.io.InputHandler;
 import org.qohs.clicker.screens.game.GameWorld;
 
 import com.badlogic.gdx.Gdx;
@@ -20,7 +19,6 @@ public class GameScreen implements Screen {
 	public GameScreen() {
 		Gdx.app.log("GameScreen", "Attached");
 		world = new GameWorld();
-		InputHandler.setGameScreen(this);
 	}
 	
 	public GameWorld getWorld() {
