@@ -1,7 +1,6 @@
 package org.qohs.clicker.screens.game.gameobjects;
 
 import org.qohs.clicker.io.AssetLoader;
-import org.qohs.clicker.screens.game.GameWorld;
 import org.qohs.clicker.screens.game.RenderObjQueue;
 import org.qohs.clicker.screens.util.UpdateRenderObj;
 
@@ -24,17 +23,19 @@ public class PlusNumber implements UpdateRenderObj {
 	private static final float SECONDARY_FADE_TIME = PRIMARY_FADE_TIME / 3f;
 	
 	private final String plusString;
+	private int x;
 	private int y;
 	private int originalDistance;
 	private Color white;
 	private Color black;
 	private Actor fader;
 	
-	public PlusNumber(int addition) {
+	public PlusNumber(int x, int y, int addition) {
 		
 		plusString = "+" + addition;
-		y = GameWorld.GAMEHEIGHT/2;
-		originalDistance = y;
+		this.x = x;
+		this.y = y;
+		originalDistance = this.y;
 		white = new Color(AssetLoader.plus_number_font.getColor());
 		black = new Color(AssetLoader.plus_number_shadow_font.getColor());
 		fader = new Actor();
@@ -64,9 +65,9 @@ public class PlusNumber implements UpdateRenderObj {
 
 		batcher.begin();
 		AssetLoader.plus_number_shadow_font.setColor(black);
-		AssetLoader.plus_number_shadow_font.draw(batcher, plusString, (GameWorld.GAMEWIDTH )/2+2, y+2);
+		AssetLoader.plus_number_shadow_font.draw(batcher, plusString, x+2, y+2);
 		AssetLoader.plus_number_font.setColor(white);
-		AssetLoader.plus_number_font.draw(batcher, plusString, (GameWorld.GAMEWIDTH )/2, y);
+		AssetLoader.plus_number_font.draw(batcher, plusString, x, y);
 		batcher.end();
 		//reset color
 		AssetLoader.plus_number_shadow_font.setColor(AssetLoader.plus_number_shadow_font.getOriginalColor());

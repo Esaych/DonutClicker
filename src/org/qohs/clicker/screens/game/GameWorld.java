@@ -1,8 +1,6 @@
 package org.qohs.clicker.screens.game;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 import org.qohs.clicker.io.AssetLoader;
 import org.qohs.clicker.screens.game.gameobjects.AutoClicker;

@@ -4,6 +4,7 @@ import org.qohs.clicker.Clicker;
 import org.qohs.clicker.Clicker.ScreenType;
 import org.qohs.clicker.screens.GameScreen;
 import org.qohs.clicker.screens.MenuScreen;
+import org.qohs.clicker.screens.game.gameobjects.PlusNumber;
 import org.qohs.clicker.screens.game.gameobjects.Score;
 import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
 
@@ -82,8 +83,15 @@ public class InputHandler implements InputProcessor {
 				gameScreen.getWorld().shopButton.animateClickUp();
 			else if (gameScreen.getWorld().settingsButton.collision(x, y))
 				gameScreen.getWorld().settingsButton.animateClickUp();
-			else
-				Score.addUserClicks(1);
+			else {
+				
+				double multiplier = DonutTopping.getMultiplier(gameScreen.getWorld().donut.getTopping());
+				Score.addScore(1, multiplier);
+				if (multiplier != 0) {
+					
+					new PlusNumber(x, y, (int) multiplier);
+				}
+			}
 				//Score.addScore(1, DonutTopping.getMultiplier(gameScreen.getWorld().donut.getTopping()));
 			gameScreen.getWorld().donut.animateClickUp();
 		}
