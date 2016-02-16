@@ -6,10 +6,10 @@ import org.qohs.clicker.io.AssetLoader;
 import org.qohs.clicker.screens.game.gameobjects.AutoClicker;
 import org.qohs.clicker.screens.game.gameobjects.Donut;
 import org.qohs.clicker.screens.game.gameobjects.Score;
-import org.qohs.clicker.screens.game.gameobjects.buttons.SettingsButton;
-import org.qohs.clicker.screens.game.gameobjects.buttons.ShopButton;
 import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutTopping;
 import org.qohs.clicker.screens.game.gameobjects.donutaspects.DonutType;
+import org.qohs.clicker.screens.menu.buttons.SettingsButton;
+import org.qohs.clicker.screens.menu.buttons.ShopButton;
 import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.Gdx;
@@ -48,7 +48,7 @@ public class GameWorld {
         donut = new Donut(DonutType.GLAZED, DonutTopping.RAINBOW_SPRINKLES);
         score = new Score(donut);
         autoClicker = new AutoClicker(donut);
-		shopButton = new ShopButton();
+		shopButton = new ShopButton(false);
 		settingsButton = new SettingsButton();
         
 		cam = new OrthographicCamera();
@@ -76,7 +76,6 @@ public class GameWorld {
 		
 		batcher.begin();
 		batcher.draw(AssetLoader.awning, 0, GAMEWIDTH*-1/4, GAMEWIDTH, GAMEWIDTH);
-		batcher.draw(AssetLoader.table, 0, GAMEHEIGHT*4/5, GAMEWIDTH, GAMEWIDTH*3/4);
 		batcher.end();
 		
 		for (UpdateRenderObj objClass : renderObjs) {
