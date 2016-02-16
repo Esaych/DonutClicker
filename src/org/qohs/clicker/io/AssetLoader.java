@@ -45,7 +45,7 @@ public class AssetLoader {
 		
 		//LOADING FONTS
 		score_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
-		score_shadow_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
+		score_shadow_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-black.fnt"), true);
 		plus_number_font = new ColorRetainingBitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
 		plus_number_font.getData().setScale(.65f);
 		plus_number_shadow_font = new ColorRetainingBitmapFont(Gdx.files.internal("assets/snaps-taste-52-black.fnt"), true);
