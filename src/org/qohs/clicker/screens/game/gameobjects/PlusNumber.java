@@ -33,7 +33,7 @@ public class PlusNumber implements UpdateRenderObj {
 	public PlusNumber(int x, int y, int addition) {
 		
 		plusString = "+" + addition;
-		this.x = x;
+		this.x = x-15;
 		this.y = y;
 		originalDistance = this.y;
 		white = new Color(AssetLoader.plus_number_font.getColor());
