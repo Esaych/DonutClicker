@@ -62,9 +62,8 @@ public class ColorRetainingBitmapFont extends BitmapFont {
 		color = new Color(super.getColor());
 	}
 	
-	@Override
-	public Color getColor() {
-		
+	public Color getOriginalColor() {
+
 		return color;
 	}
 }
