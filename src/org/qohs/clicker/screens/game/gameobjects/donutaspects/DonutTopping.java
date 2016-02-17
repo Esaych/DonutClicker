@@ -5,6 +5,12 @@ import java.util.Map;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+
+/**
+ * ENUM to keep track of donut toppings and their associated multipliers
+ * @author QO Game Dev Club
+ *
+ */
 public enum DonutTopping {
 
 	NONE,
