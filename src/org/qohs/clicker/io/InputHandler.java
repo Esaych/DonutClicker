@@ -87,12 +87,13 @@ public class InputHandler implements InputProcessor {
 				
 				double multiplier = DonutTopping.getMultiplier(gameScreen.getWorld().donut.getTopping());
 				Score.addScore(1, multiplier);
-				if (multiplier != 0) {
+				//casts the multiplier to an int for plus number
+				int addition = (int) multiplier;
+				if (addition != 0) {
 					
-					new PlusNumber(x, y, (int) multiplier);
+					new PlusNumber(x, y, addition);
 				}
 			}
-				//Score.addScore(1, DonutTopping.getMultiplier(gameScreen.getWorld().donut.getTopping()));
 			gameScreen.getWorld().donut.animateClickUp();
 		}
 		else {
