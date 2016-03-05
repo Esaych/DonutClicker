@@ -3,7 +3,7 @@ package org.qohs.clicker.screens.menu;
 import java.util.ArrayList;
 
 import org.qohs.clicker.io.AssetLoader;
-import org.qohs.clicker.screens.menu.buttons.ShopButton;
+import org.qohs.clicker.screens.menu.buttons.*;
 import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.Gdx;
@@ -19,6 +19,8 @@ public class Menu {
 	private SpriteBatch batcher;
 	
 	public ShopButton shopButton;
+	public TrophyButton trophyButton;
+	public RibbonButton ribbonButton;
 	
 	public static ArrayList<UpdateRenderObj> updateObjs = new ArrayList<UpdateRenderObj>();
 	public static ArrayList<UpdateRenderObj> renderObjs = new ArrayList<UpdateRenderObj>();
@@ -36,6 +38,8 @@ public class Menu {
 		renderer.setProjectionMatrix(cam.combined);
 		
 		shopButton = new ShopButton(true);
+		trophyButton = new TrophyButton();
+		ribbonButton = new RibbonButton();
 	}
 	
     public void update(float delta) {

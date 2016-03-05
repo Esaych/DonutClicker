@@ -62,8 +62,10 @@ public class AssetLoader {
 		shopreturn = new TextureRegion(shop, 4000, 2000, 2000, 1500); shopreturn.flip(false, true);
 		shopreturn_clicked = new TextureRegion(shop, 6000, 2000, 2000, 1500); shopreturn_clicked.flip(false, true);
 		
-		icon_trophy = new TextureRegion(icons, 779, 77, 563, 653);icon_trophy.flip(false, true);
-		icon_ribbon = new TextureRegion(icons, 375, 720, 542, 752);icon_ribbon.flip(false, true);
+		//icon_trophy = new TextureRegion(icons, 779, 77, 563, 653);icon_trophy.flip(false, true);
+		icon_trophy = new TextureRegion(icons, 779, 77, 563, 655);icon_trophy.flip(false, true);
+		//icon_ribbon = new TextureRegion(icons, 375, 720, 542, 752);icon_ribbon.flip(false, true);
+		icon_ribbon = new TextureRegion(icons, 100, 320, 542, 772);icon_ribbon.flip(false, true);
 		icon_settings = new TextureRegion(icons, 494, 1178, 558, 538);icon_settings.flip(true, true);
 		icon_menu_toggle = new TextureRegion(icons, 800, 890, 530, 205);
 		

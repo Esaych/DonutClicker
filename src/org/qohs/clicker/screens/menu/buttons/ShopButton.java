@@ -7,13 +7,15 @@ import org.qohs.clicker.screens.game.GameWorld;
 import org.qohs.clicker.screens.util.Button;
 import org.qohs.clicker.screens.util.UpdateRenderObj;
 
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+
 public class ShopButton extends Button implements UpdateRenderObj {
 
 	public ShopButton(boolean inShop) {
 		super(0, (inShop? 0 : GameWorld.GAMEHEIGHT*4/5),
 				GameWorld.GAMEWIDTH, GameWorld.GAMEWIDTH*3/4,
-				(inShop ? AssetLoader.shopreturn : AssetLoader.table), 
-				(inShop ? AssetLoader.shopreturn_clicked : AssetLoader.table_clicked));
+				new TextureRegionDrawable(inShop ? AssetLoader.shopreturn : AssetLoader.table), 
+				new TextureRegionDrawable(inShop ? AssetLoader.shopreturn_clicked : AssetLoader.table_clicked));
 	}
 
 	@Override

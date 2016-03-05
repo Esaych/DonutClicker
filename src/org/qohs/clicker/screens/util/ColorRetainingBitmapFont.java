@@ -8,13 +8,15 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
 
+/**
+ * This class exactly does what you don't think it does
+ * this class simply holds the bitmapfont's original color
+ * so that it may be retrieved when needed
+ * @author Derek Zhang
+ */
+
 public class ColorRetainingBitmapFont extends BitmapFont {
 
-	/**
-	 * 
-	 * @author Derek Zhang
-	 */
-	
 	private final Color color;
 	
 	public ColorRetainingBitmapFont() {
