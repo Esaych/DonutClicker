@@ -14,9 +14,9 @@ public class RibbonButton extends Button {
 
 	public RibbonButton() {
 		
-		super(GameWorld.GAMEWIDTH / 2, GameWorld.GAMEHEIGHT - GameWorld.GAMEHEIGHT / 5,
-				GameWorld.GAMEWIDTH / 2, GameWorld.GAMEHEIGHT / 5,
-				new PaddedDrawable(AssetLoader.icon_ribbon, 1, 1),
+		super(GameWorld.GAMEWIDTH / 2, GameWorld.GAMEHEIGHT - GameWorld.GAMEHEIGHT / 10,
+				GameWorld.GAMEWIDTH / 2, GameWorld.GAMEHEIGHT / 10,
+				new PaddedDrawable(AssetLoader.icon_ribbon, .75f, .75f),
 				new PaddedDrawable(AssetLoader.icon_ribbon, .5f, .5f));
 	}
 

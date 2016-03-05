@@ -49,18 +49,22 @@ public class PaddedDrawable extends TextureRegionDrawable {
 		}
 		
 		TextureRegion textureRegion = getRegion();
-		int firstScale = (int) Math.max(textureRegion.getRegionWidth() / width, textureRegion.getRegionHeight() / height);
+		int firstScale = (int) Math.max(textureRegion.getRegionWidth() / width, textureRegion.getRegionHeight() / height);//textureRegion.getRegionWidth() / width
+		float newWidth, newHeight;
 		if (firstScale > 1) {
 
-			width = textureRegion.getRegionWidth() / firstScale;
-			height = textureRegion.getRegionHeight() / firstScale;
+			newWidth = textureRegion.getRegionWidth() / firstScale;
+			newHeight = textureRegion.getRegionHeight() / firstScale;
 		}
 		else {
 			
-			width = textureRegion.getRegionWidth();
-			height = textureRegion.getRegionHeight();
+			newWidth = textureRegion.getRegionWidth();
+			newHeight = textureRegion.getRegionHeight();
 		}
 		
-		this.draw(batch, x + width / 2, y - height / 2, x, y, width, height, xScale, yScale, 0);
+		newWidth *= xScale;
+		newHeight *= yScale;
+		
+		batch.draw(textureRegion, x + (width - newWidth) / 2, y + (height - newHeight) / 2, newWidth, newHeight);
 	}
 }
