@@ -29,10 +29,12 @@ public class MultiplierShopDrawable extends BaseDrawable {
 	public void draw(Batch batch, float x, float y, float width, float height) {
 		
 		batch.draw(icon, x + width - height, y, height, height);
+		AssetLoader.plus_number_font.setColor(AssetLoader.plus_number_font.getOriginalColor());
 		AssetLoader.plus_number_shadow_font.draw(batch, name, x+2, y+2);
+		AssetLoader.plus_number_shadow_font.setColor(AssetLoader.plus_number_shadow_font.getOriginalColor());
 		AssetLoader.plus_number_font.draw(batch, name, x, y);
 		GlyphLayout glyphLayout = new GlyphLayout(AssetLoader.plus_number_font, price);
-		AssetLoader.plus_number_shadow_font.draw(batch, glyphLayout, x + width - glyphLayout.width, y + height - glyphLayout.height);
+		AssetLoader.plus_number_shadow_font.draw(batch, glyphLayout, x + width - glyphLayout.width + 2, y + height - glyphLayout.height + 2);
 		AssetLoader.plus_number_font.draw(batch, glyphLayout, x + width- glyphLayout.width, y + height - glyphLayout.height);
 	}
 }
