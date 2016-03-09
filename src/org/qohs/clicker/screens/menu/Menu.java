@@ -22,6 +22,7 @@ public class Menu {
 	public TrophyButton trophyButton;
 	public RibbonButton ribbonButton;
 	public Dropdown dropdown;
+	public MultiplierShopButton multiShopButton;
 	
 	public static ArrayList<UpdateRenderObj> updateObjs = new ArrayList<UpdateRenderObj>();
 	public static ArrayList<UpdateRenderObj> renderObjs = new ArrayList<UpdateRenderObj>();
@@ -42,6 +43,7 @@ public class Menu {
 		trophyButton = new TrophyButton();
 		ribbonButton = new RibbonButton();
 		dropdown = new Dropdown(GAMEWIDTH/3, "HELLO");
+		multiShopButton = new MultiplierShopButton(0, GAMEHEIGHT / 5, GAMEWIDTH, GAMEHEIGHT / 10, 9001);
 	}
 	
     public void update(float delta) {
