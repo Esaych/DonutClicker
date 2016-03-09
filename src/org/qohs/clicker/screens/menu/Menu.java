@@ -21,6 +21,7 @@ public class Menu {
 	public ShopButton shopButton;
 	public TrophyButton trophyButton;
 	public RibbonButton ribbonButton;
+	public Dropdown dropdown;
 	
 	public static ArrayList<UpdateRenderObj> updateObjs = new ArrayList<UpdateRenderObj>();
 	public static ArrayList<UpdateRenderObj> renderObjs = new ArrayList<UpdateRenderObj>();
@@ -40,6 +41,7 @@ public class Menu {
 		shopButton = new ShopButton(true);
 		trophyButton = new TrophyButton();
 		ribbonButton = new RibbonButton();
+		dropdown = new Dropdown(GAMEWIDTH/3, "HELLO");
 	}
 	
     public void update(float delta) {

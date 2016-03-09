@@ -18,23 +18,18 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class AssetLoader {
 	//Image/Sprite Files
-	public static Texture icons;
-	public static Texture toppings_texture;
-	public static Texture type_texture;
-	public static Texture shop;	
-	public static Texture wood;
+	public static Texture icons, toppings_texture, type_texture, shop, wood, dropdowns;
 	
 	//Fonts
-	public static BitmapFont score_font;
-	public static BitmapFont score_shadow_font;
-	public static ColorRetainingBitmapFont plus_number_font;
-	public static ColorRetainingBitmapFont plus_number_shadow_font;
+	public static BitmapFont score_font, score_shadow_font;
+	public static ColorRetainingBitmapFont plus_number_font, plus_number_shadow_font;
 	
 	//ICON REGIONS
 	public static TextureRegion icon_trophy, icon_ribbon, icon_settings, icon_menu_toggle;
 	
 	//INTERFACE REGIONS
-	public static TextureRegion awning, sign, table, table_clicked, shopbackground, shopreturn, shopreturn_clicked;
+	public static TextureRegion awning, sign, table, table_clicked, shopbackground, shopreturn, shopreturn_clicked,
+	dropdown, dropdown_clicked, dropdownarrow, dropdownarrow_clicked;
 
 	public static void load() {
 		
@@ -44,6 +39,7 @@ public class AssetLoader {
 		icons = new Texture(Gdx.files.internal("assets/eat.png"));
 		shop = new Texture(Gdx.files.internal("assets/donutshoppe/shoppe.png"));
 		wood = new Texture(Gdx.files.internal("assets/donutshoppe/wood.png"));
+		dropdowns = new Texture(Gdx.files.internal("assets/menu/dropdowns.png"));
 		
 		//LOADING FONTS
 		score_font = new BitmapFont(Gdx.files.internal("assets/snaps-taste-52-white.fnt"), true);
@@ -61,6 +57,12 @@ public class AssetLoader {
 		shopbackground = new TextureRegion(wood, 0, 0, 2000, 4000); shopbackground.flip(false, true);
 		shopreturn = new TextureRegion(shop, 4000, 2000, 2000, 1500); shopreturn.flip(false, true);
 		shopreturn_clicked = new TextureRegion(shop, 6000, 2000, 2000, 1500); shopreturn_clicked.flip(false, true);
+		dropdown = new TextureRegion(dropdowns, 0, 0, 1024, 96); dropdown.flip(false, true);
+		dropdown_clicked = new TextureRegion(dropdowns, 0, 96, 1024, 96); dropdown_clicked.flip(false, true);
+		dropdownarrow = new TextureRegion(dropdowns, 0, 192, 97, 58); dropdownarrow.flip(false, true);
+		dropdownarrow_clicked = new TextureRegion(dropdowns, 97, 192, 97, 58); dropdownarrow_clicked.flip(false, true);
+		
+		
 		
 		//icon_trophy = new TextureRegion(icons, 779, 77, 563, 653);icon_trophy.flip(false, true);
 		icon_trophy = new TextureRegion(icons, 779, 77, 563, 655);icon_trophy.flip(false, true);
