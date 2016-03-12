@@ -22,7 +22,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.BaseDrawable;
  */
 public class MultiplierShopButton extends Button {
 
-	private volatile boolean buyable;
+	private boolean buyable;
 	private final long price;
 
 	public MultiplierShopButton(int x, int y, int width, int height, long price) {
