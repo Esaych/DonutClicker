@@ -61,10 +61,11 @@ public class Clicker extends Game implements ApplicationListener {
     }
     
     public static Screen getClickerScreen() {
-    	if (gameScreen == null)
-    		System.out.println("GAME SCREEN NULL");
-    	if (menuScreen == null)
-    		System.out.println("MENU SCREEN NULL");
+//      too annoying :(
+//    	if (gameScreen == null)
+//    		System.out.println("GAME SCREEN NULL");
+//    	if (menuScreen == null)
+//    		System.out.println("MENU SCREEN NULL");
 	    switch (getClickerScreenType()) {
 	        case GAME: 
 	            return gameScreen;

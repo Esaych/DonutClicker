@@ -43,7 +43,7 @@ public class Menu {
 		trophyButton = new TrophyButton();
 		ribbonButton = new RibbonButton();
 		dropdown = new Dropdown(GAMEWIDTH/3, "HELLO");
-		multiShopButton = new MultiplierShopButton(0, GAMEHEIGHT / 5, GAMEWIDTH, GAMEHEIGHT / 10, 9001);
+		multiShopButton = new MultiplierShopButton(0, GAMEHEIGHT * 2 / 5, GAMEWIDTH, GAMEHEIGHT / 10, 9001);
 	}
 	
     public void update(float delta) {
