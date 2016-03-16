@@ -11,7 +11,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 
-public abstract class Button implements UpdateRenderObj {
+public abstract class Button implements UpdateRenderObj, InputObj {
 	
 	protected boolean animateClick = false;
 	protected int x, y, width, height;
@@ -64,7 +64,6 @@ public abstract class Button implements UpdateRenderObj {
 	public void animateClickUp() { 
 		animateClick = false;
 		System.out.println("BUTTON UP");
-		onClick();
 	}
 	
 	public boolean collision(int x2, int y2){

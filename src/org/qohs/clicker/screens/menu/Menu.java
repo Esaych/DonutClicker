@@ -42,7 +42,7 @@ public class Menu {
 		shopButton = new ShopButton(true);
 		trophyButton = new TrophyButton();
 		ribbonButton = new RibbonButton();
-		dropdown = new Dropdown(GAMEWIDTH/3, "HELLO");
+		dropdown = new Dropdown(GAMEWIDTH*4/5, "HELLO");
 		multiShopButton = new MultiplierShopButton(0, GAMEHEIGHT / 5, GAMEWIDTH, GAMEHEIGHT / 10, 9001);
 	}
 	

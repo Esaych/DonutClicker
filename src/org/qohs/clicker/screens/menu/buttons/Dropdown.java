@@ -25,6 +25,10 @@ public class Dropdown extends Button{
 				GameWorld.GAMEWIDTH*4/5, GameWorld.GAMEWIDTH/40, 
 				GameWorld.GAMEWIDTH / 15, GameWorld.GAMEWIDTH/30);
 		drawable = buttonDrawable;
+		OverlappingDrawable buttonclickDrawable = new OverlappingDrawable(AssetLoader.dropdown_clicked, AssetLoader.dropdownarrow_clicked, 
+				GameWorld.GAMEWIDTH*4/5, GameWorld.GAMEWIDTH/40, 
+				GameWorld.GAMEWIDTH / 15, GameWorld.GAMEWIDTH/30);
+		clickDrawable = buttonclickDrawable;
 	}
 	
 	public void addMenuItem(Button button) {
@@ -33,8 +37,13 @@ public class Dropdown extends Button{
 	
 	@Override
 	public void onClick() {
-		// TODO Auto-generated method stub
+		toggled = !toggled;
 		
+	}
+
+	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
