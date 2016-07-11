@@ -9,7 +9,7 @@ import org.qohs.clicker.screens.util.UpdateRenderObj;
 
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
-public class ShopButton extends Button implements UpdateRenderObj {
+public class ShopButton extends Button implements UpdateRenderObj{
 
 	public ShopButton(boolean inShop) {
 		super(0, (inShop? 0 : GameWorld.GAMEHEIGHT*4/5),

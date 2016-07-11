@@ -114,4 +114,24 @@ public class Donut implements UpdateRenderObj {
 		// TODO Auto-generated method stub
 		
 	}
+
+	/*
+	@Override
+	public boolean isVisible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean collision(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+*/
+//	@Override
+	public void onClick() {
+		
+		Score.addScore(1, DonutTopping.getMultiplier(topping));
+	}
+	
 }
