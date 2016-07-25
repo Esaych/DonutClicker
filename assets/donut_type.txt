@@ -1,8 +1,0 @@
-type_blueberry = 0 0 1024 1024
-type_cruller = 1024 0 1024 1024
-type_fired = 0 1024 1024 1024
-type_glazed = 1024 1024 1024 1024
-type_plain = 2048 0 1024 1024
-type_stuffedcream = 2048 1024 1024 1024
-type_stuffedjam = 3072 0 1024 1024
-type_stuffedwhippcream = 3072 1024 1024 1024
