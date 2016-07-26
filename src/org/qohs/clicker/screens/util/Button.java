@@ -29,6 +29,7 @@ public abstract class Button implements UpdateRenderObj, InputObj {
 			GameWorld.registerUpdates(this, false, true);
 		else if (Clicker.getClickerScreenType().equals(ScreenType.MENU))
 			Menu.registerUpdates(this, false, true);
+//		InputHandler.registerInputObject(this);
 	}
 	
 	public int getX(){
@@ -104,4 +105,6 @@ public abstract class Button implements UpdateRenderObj, InputObj {
 	}
 	
 	public abstract void onClick();
+	
+	public boolean isVisible(){return false;}
 }

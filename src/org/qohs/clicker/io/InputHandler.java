@@ -82,12 +82,39 @@ public class InputHandler implements InputProcessor {
 	}
 
 	public boolean touchUp(int x, int y, int pointer, int button) {
+		
+		if (Clicker.getClickerScreenType().equals(ScreenType.GAME)) {
+			GameScreen gameScreen = (GameScreen) Clicker.getClickerScreen();
+			if (gameScreen.getWorld().shopButton.collision(x, y)) {
+				gameScreen.getWorld().shopButton.animateClickUp();
+				gameScreen.getWorld().shopButton.onClick();
+			}
+			else if (gameScreen.getWorld().settingsButton.collision(x, y)) {
+				gameScreen.getWorld().settingsButton.animateClickUp();
+				gameScreen.getWorld().settingsButton.onClick();
+			}
+			else //not a button click - must be donut click
+			{
+				gameScreen.getWorld().donut.animateClickUp();
+				gameScreen.getWorld().donut.onClick();
+			}
+		}
+		else {
+			MenuScreen menuScreen = (MenuScreen) Clicker.getClickerScreen();
+			if (menuScreen.getMenu().shopButton.collision(x, y)) {
+				menuScreen.getMenu().shopButton.animateClickUp();
+				menuScreen.getMenu().shopButton.onClick();
+			}
+		}
+		
+		/*
 		for (InputObj b : inputobjs) {
 			if (b.isVisible() && b.collision(x, y)) {
 				b.animateClickUp();
 				b.onClick();
 			}
 		}
+		*/
 //		if (Clicker.getClickerScreenType().equals(ScreenType.GAME)) {
 //			GameScreen gameScreen = (GameScreen) Clicker.getClickerScreen();
 //			if (gameScreen.getWorld().shopButton.collision(x, y))
